@@ -42,8 +42,49 @@
   //code in here wont run until page loads
   $(function(){
 
+//
+// })();
+//
+// (function(){
+//variables
+    let oneShot = $("#teamone-numshots");
+    let oneShoot = $("#teamone-shoot");
+    let oneGoal = $("#teamone-numhits");
+    let twoShot = $("#teamtwo-numshots");
+    let twoShoot = $("#teamtwo-shoot");
+    let twoGoal = $("#teamtwo-numhits");
+    let resetCount = $("#num-resets");
+    let reset= $("#reset");
+    let smack= $('smack');
+    let resetNoise= $('resetnoise');
 
+    //Team 1 code
+    oneShoot.click(function(){
+      oneShot.html(parseInt(oneShot.html())+1)
+        let shot1 = (Math.floor(Math.random()*50-1)+1);
+        if (shot1> 30) {oneGoal.html(parseInt(oneGoal.html())+1);
+        $("body").css('background','red');
+        };
+    });
+    //team 2 variables
 
+    twoShoot.click (function(){
+      twoShot.html(parseInt(twoShot.html())+1);
+        let shot2 = (Math.floor(Math.random()*50-1)+1);
+        if (shot2> 25) {twoGoal.html(parseInt(twoGoal.html())+1)
+        $("body").css('background','blue');
+        };
+    });
+
+    reset.click(function(){
+      resetCount.html(parseInt(resetCount.html())+1);
+        oneShot.html(0);
+        oneGoal.html(0);
+        twoShot.html(0);
+        twoGoal.html(0);
+        $("body").css('background','white');
+      });
+      
   })
 
 })();

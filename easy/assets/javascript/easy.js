@@ -22,9 +22,10 @@
    * Gets the text from the element for you
    * @return {String}
    */
-  function getText() {
-    return $('#save-me').val();
-  }
+
+
+      function getText() {
+        return $('#save-me').val();}
 
   /**
    * Puts different text
@@ -33,4 +34,15 @@
   function setText(text) {
     return $('#save-me').val(text);
   }
+
+  saveButton.click(function(){
+    localStorage.setItem("savetext", getText());
+
+  })
+
+  loadButton.click(function(){
+    setText(localStorage.getItem("savetext"));
+
+  })
+
 })();
